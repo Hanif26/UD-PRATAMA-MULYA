@@ -180,16 +180,24 @@ button {
   gap: 27px;
 }
 
+/* Tampilan normal semua menu */
 .nav-menu a {
   position: relative;
   font-size: 13px;
   font-weight: 500;
   white-space: nowrap;
+  color: #ffffff;
   transition: color 0.25s ease;
 }
 
-.nav-menu a:hover,
+/* Menu aktif tetap putih */
 .nav-menu a.active {
+  color: #ffffff;
+}
+
+/* Efek hover untuk semua menu termasuk Tentang Kami */
+.nav-menu a:hover,
+.nav-menu a.active:hover {
   color: #40d3e7;
 }
 
