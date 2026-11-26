@@ -1,0 +1,680 @@
+
+/* =========================================
+   1. GLOBAL STYLE
+========================================= */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: #ffffff;
+  color: #172238;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+}
+
+.about-page {
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* =========================================
+   2. HERO SECTION
+========================================= */
+
+.about-hero {
+  position: relative;
+  min-height: 480px;
+  color: #ffffff;
+
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(3, 15, 32, 0.72) 0%,
+      rgba(3, 15, 32, 0.45) 55%,
+      rgba(3, 15, 32, 0.35) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(3, 15, 32, 0.25),
+      rgba(3, 15, 32, 0.15)
+    ),
+    var(--hero-background);
+
+  background-size: cover;
+  background-position: center 55%;
+  background-repeat: no-repeat;
+}
+
+/* =========================================
+   3. HEADER / TOPBAR
+========================================= */
+
+.site-header {
+  position: relative;
+  z-index: 20;
+  width: 100%;
+  color: #ffffff;
+}
+
+.topbar {
+  height: 49px;
+  padding: 0 5.2%;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.topbar-links {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+
+  font-size: 11px;
+  font-weight: 400;
+}
+
+.topbar-links a {
+  transition: color 0.25s ease;
+}
+
+.topbar-links a:hover {
+  color: #42d1e2;
+}
+
+.language {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.flag {
+  font-size: 13px;
+}
+
+.agent-link {
+  padding: 5px 15px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 30px;
+}
+
+/* =========================================
+   4. MAIN NAVBAR
+========================================= */
+
+.navbar {
+  min-height: 100px;
+  padding: 16px 5.2%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-shrink: 0;
+}
+
+.brand-logo {
+  width: 83px;
+  height: 65px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brand-logo svg {
+  width: 100%;
+  height: 100%;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+  letter-spacing: 1.4px;
+}
+
+.brand-text strong {
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  margin-bottom: 3px;
+}
+
+.brand-text span {
+  font-size: 9px;
+  font-weight: 600;
+  color: #d0e9ee;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 27px;
+}
+
+.nav-menu a {
+  position: relative;
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: color 0.25s ease;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+  color: #40d3e7;
+}
+
+.search-link {
+  display: flex;
+  align-items: center;
+}
+
+.mobile-menu-button {
+  display: none;
+}
+
+/* =========================================
+   5. HERO CONTENT
+========================================= */
+
+.hero-content {
+  width: 90%;
+  max-width: 1152px;
+  margin: 0 auto;
+
+  padding-top: 78px;
+  padding-bottom: 55px;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  margin-bottom: 10px;
+  font-size: 13px;
+  color: #ffffff;
+}
+
+.breadcrumb a {
+  color: rgba(255, 255, 255, 0.85);
+  transition: color 0.2s ease;
+}
+
+.breadcrumb a:hover {
+  color: #40d3e7;
+}
+
+.breadcrumb span:last-child {
+  font-weight: 600;
+}
+
+.hero-content h1 {
+  margin-bottom: 10px;
+
+  font-size: clamp(36px, 4vw, 46px);
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: -1.5px;
+}
+
+.hero-content p {
+  max-width: 550px;
+
+  font-size: 14px;
+  line-height: 1.55;
+  font-weight: 400;
+
+  color: #f0f3f6;
+}
+
+.hero-buttons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-top: 31px;
+}
+
+.btn-primary,
+.btn-outline {
+  min-height: 39px;
+  padding: 0 21px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 4px;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  transition: all 0.25s ease;
+}
+
+.btn-primary {
+  background: #002d50;
+  border: 1px solid #0b5682;
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background: #0877a9;
+  border-color: #0877a9;
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.btn-outline:hover {
+  color: #172238;
+  background: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* =========================================
+   6. QUICK NAVIGATION
+========================================= */
+
+.quick-navigation {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  background: #ffffff;
+  border-bottom: 1px solid #e3e8ef;
+}
+
+.quick-navigation-item {
+  min-height: 60px;
+  padding: 0 25px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border-right: 1px solid #e0e5eb;
+
+  font-size: 14px;
+  font-weight: 600;
+  color: #172238;
+
+  transition: all 0.25s ease;
+}
+
+.quick-navigation-item:last-child {
+  border-right: none;
+}
+
+.quick-navigation-item:hover {
+  background: #f5faff;
+  color: #0074a9;
+}
+
+.quick-navigation-item svg {
+  color: #91a6c1;
+  transition: transform 0.25s ease;
+}
+
+.quick-navigation-item:hover svg {
+  transform: translateX(5px);
+  color: #0074a9;
+}
+
+/* =========================================
+   7. ABOUT COMPANY SECTION
+========================================= */
+
+.about-company {
+  width: 90%;
+  max-width: 1152px;
+  margin: 0 auto;
+
+  padding: 57px 0 55px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 65px;
+}
+
+.about-company-content {
+  max-width: 550px;
+}
+
+.section-label {
+  display: inline-block;
+
+  margin-bottom: 9px;
+
+  color: #0071a8;
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.about-company-content h2 {
+  margin-bottom: 24px;
+
+  color: #172238;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.about-company-content p {
+  margin-bottom: 17px;
+
+  color: #53647c;
+  font-size: 15px;
+  line-height: 1.65;
+  font-weight: 400;
+}
+
+.about-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  margin-top: 20px;
+
+  color: #0076b1;
+  font-size: 14px;
+  font-weight: 600;
+
+  transition: gap 0.25s ease;
+}
+
+.about-more:hover {
+  gap: 14px;
+}
+
+.about-more svg {
+  transition: transform 0.25s ease;
+}
+
+/* =========================================
+   8. ABOUT IMAGE
+========================================= */
+
+.about-company-image {
+  width: 100%;
+  height: 410px;
+
+  overflow: hidden;
+  border-radius: 16px;
+
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.12);
+}
+
+.about-company-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+  object-position: center;
+
+  transition: transform 0.5s ease;
+}
+
+.about-company-image:hover img {
+  transform: scale(1.04);
+}
+
+/* =========================================
+   9. TABLET RESPONSIVE
+========================================= */
+
+@media (max-width: 1100px) {
+  .navbar {
+    padding-left: 4%;
+    padding-right: 4%;
+  }
+
+  .nav-menu {
+    gap: 15px;
+  }
+
+  .nav-menu a {
+    font-size: 12px;
+  }
+
+  .brand-logo {
+    width: 65px;
+  }
+
+  .brand-text strong {
+    font-size: 14px;
+  }
+
+  .hero-content {
+    max-width: 90%;
+  }
+
+  .about-company {
+    gap: 35px;
+  }
+
+  .quick-navigation-item {
+    padding: 0 18px;
+    font-size: 13px;
+  }
+}
+
+/* =========================================
+   10. MOBILE RESPONSIVE
+========================================= */
+
+@media (max-width: 768px) {
+  .about-hero {
+    min-height: 520px;
+    background-position: center;
+  }
+
+  .topbar {
+    display: none;
+  }
+
+  .navbar {
+    min-height: 85px;
+    padding: 12px 5%;
+  }
+
+  .brand {
+    gap: 8px;
+  }
+
+  .brand-logo {
+    width: 52px;
+    height: 50px;
+  }
+
+  .brand-text strong {
+    font-size: 13px;
+  }
+
+  .brand-text span {
+    font-size: 8px;
+  }
+
+  .mobile-menu-button {
+    width: 35px;
+    height: 35px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  .mobile-menu-button span {
+    width: 25px;
+    height: 2px;
+
+    display: block;
+    background: #ffffff;
+    border-radius: 5px;
+  }
+
+  .nav-menu {
+    display: none;
+
+    position: absolute;
+    top: 85px;
+    left: 0;
+
+    width: 100%;
+    padding: 22px 5%;
+
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+
+    background: #09233b;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  .nav-menu.show {
+    display: flex;
+  }
+
+  .nav-menu a {
+    font-size: 14px;
+  }
+
+  .hero-content {
+    width: 90%;
+    padding-top: 105px;
+    padding-bottom: 60px;
+  }
+
+  .hero-content h1 {
+    font-size: 36px;
+  }
+
+  .hero-content p {
+    max-width: 480px;
+    font-size: 13px;
+  }
+
+  .hero-buttons {
+    flex-wrap: wrap;
+  }
+
+  .quick-navigation {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .quick-navigation-item {
+    min-height: 55px;
+    padding: 0 15px;
+
+    font-size: 12px;
+
+    border-bottom: 1px solid #e0e5eb;
+  }
+
+  .about-company {
+    width: 90%;
+    grid-template-columns: 1fr;
+    gap: 35px;
+
+    padding: 55px 0;
+  }
+
+  .about-company-content {
+    max-width: 100%;
+  }
+
+  .section-label {
+    font-size: 22px;
+  }
+
+  .about-company-content h2 {
+    font-size: 19px;
+  }
+
+  .about-company-content p {
+    font-size: 14px;
+  }
+
+  .about-company-image {
+    height: 300px;
+  }
+}
+
+/* =========================================
+   11. SMALL MOBILE
+========================================= */
+
+@media (max-width: 420px) {
+  .brand-logo {
+    width: 45px;
+  }
+
+  .brand-text strong {
+    font-size: 11px;
+  }
+
+  .hero-content h1 {
+    font-size: 32px;
+  }
+
+  .hero-buttons {
+    gap: 9px;
+  }
+
+  .btn-primary,
+  .btn-outline {
+    padding: 0 14px;
+    font-size: 11px;
+  }
+
+  .quick-navigation-item {
+    padding: 0 10px;
+    font-size: 11px;
+  }
+
+  .about-company-image {
+    height: 240px;
+  }
+}
